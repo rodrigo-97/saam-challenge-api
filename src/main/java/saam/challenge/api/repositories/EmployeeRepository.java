@@ -13,5 +13,7 @@ import java.util.Optional;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     Optional<Employee> findByIdAndUserAndActiveTrue(Long id, User user);
 
+    Optional<Employee> findByIdAndUserAndActiveFalse(Long id, User user);
+
     Page<Employee> findByUserAndActiveTrue(User user, Pageable pageable);
 }
