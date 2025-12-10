@@ -43,7 +43,7 @@ public class UpdateEmployeeService {
     }
 
     private Employee findEmployeeToUpdate(Long employeeId, User user) {
-        Optional<Employee> employee = repository.findByIdAndUser(employeeId, user);
+        Optional<Employee> employee = repository.findByIdAndUserAndActiveTrue(employeeId, user);
 
         if (employee.isEmpty()) {
             throw new EmployeeNotFoundException();

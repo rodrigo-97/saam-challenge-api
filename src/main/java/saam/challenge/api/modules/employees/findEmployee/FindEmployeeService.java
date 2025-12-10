@@ -33,7 +33,7 @@ public class FindEmployeeService {
     }
 
     private Employee findEmployee(Long employeeId, User user) {
-        Optional<Employee> employee = repository.findByIdAndUser(employeeId, user);
+        Optional<Employee> employee = repository.findByIdAndUserAndActiveTrue(employeeId, user);
 
         if (employee.isEmpty()) {
             throw new EmployeeNotFoundException();
