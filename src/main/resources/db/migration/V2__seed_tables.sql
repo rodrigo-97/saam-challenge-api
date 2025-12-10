@@ -154,3 +154,6 @@ VALUES (1, 1, 'Ana Costa', '2025-01-05 08:15:00', 4200.0, true),
        (148, 2, 'Xavier Santos', '2025-07-13 09:05:00', 4300.25, true),
        (149, 2, 'Yasmin Dias', '2025-07-17 08:50:00', 3950.5, true),
        (150, 2, 'Zeca Costa', '2025-07-21 09:15:00', 4200.0, true);
+
+SELECT setval('employees_id_seq', (SELECT MAX(id) FROM employees), true);
+SELECT setval('users_id_seq', (SELECT MAX(id) FROM users), true);
