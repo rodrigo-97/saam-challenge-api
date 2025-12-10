@@ -2,6 +2,7 @@ package saam.challenge.api.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
