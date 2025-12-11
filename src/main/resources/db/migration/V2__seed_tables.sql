@@ -1,7 +1,7 @@
 INSERT INTO public.users (id, username, email, first_name, last_name, password_hash)
-VALUES (1, 'admin', 'admin@admin', 'Jhon', 'Doe', '$2b$12$3Gq2pYD1ebXRjTjPwdREUOfGhBHVuKkyNXJ5W3HiJLmlvuKEB5NsG'),
+VALUES (1, 'admin', 'admin@admin', 'Jhon', 'Doe', '$2a$12$wgSteAgHlacmuiXAeeKQauxZPcSfgx.1vcDCcO2gz8DN0PgITgl2C'),
        (2, 'jane.smith', 'jane.smith@example.com', 'Jane', 'Smith',
-        '$2b$12$3Gq2pYD1ebXRjTjPwdREUOfGhBHVuKkyNXJ5W3HiJLmlvuKEB5NsG');
+        '$2a$12$y1xmqdV7u5N20/iy0xxBieIHKqVWZp3WlGWdOEgfUYj6Jk6/Gba9y');
 
 INSERT INTO public.employees (id, user_id, "name", admission_date, salary, active)
 VALUES (1, 1, 'Ana Costa', '2025-01-05 08:15:00', 4200.0, true),
