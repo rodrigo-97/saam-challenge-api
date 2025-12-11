@@ -26,14 +26,14 @@ public class FindEmployeeService {
         // valida usuário logado
         User user = userComponent.findAuthenticated();
 
-        // busca os dados do empregado
+        // busca os dados do funcionário
         Employee employee = findEmployee(employeeId, user);
 
         return FindEmployeeReturn.fromEntity(employee);
     }
 
     private Employee findEmployee(Long employeeId, User user) {
-        Optional<Employee> employee = repository.findByIdAndUserAndActiveTrue(employeeId, user);
+        Optional<Employee> employee = repository.findByIdAndUser(employeeId, user);
 
         if (employee.isEmpty()) {
             throw new EmployeeNotFoundException();

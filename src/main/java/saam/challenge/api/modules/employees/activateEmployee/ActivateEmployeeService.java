@@ -11,12 +11,12 @@ import saam.challenge.api.repositories.EmployeeRepository;
 import java.util.Optional;
 
 @Service
-public class ActivateUserService {
+public class ActivateEmployeeService {
 
     private final UserComponent userComponent;
     private final EmployeeRepository repository;
 
-    public ActivateUserService(UserComponent userComponent, EmployeeRepository repository) {
+    public ActivateEmployeeService(UserComponent userComponent, EmployeeRepository repository) {
         this.userComponent = userComponent;
         this.repository = repository;
     }
@@ -26,10 +26,10 @@ public class ActivateUserService {
         // valida usuário logado
         User user = userComponent.findAuthenticated();
 
-        // busca empregado que será ativado novamente
+        // busca funcionário que será ativado novamente
         Employee employeeToActivate = findEmployeeToActivate(employeeId, user);
 
-        // ativa novamente o empregado
+        // ativa novamente o funcionário
         activateEmployee(employeeToActivate);
     }
 

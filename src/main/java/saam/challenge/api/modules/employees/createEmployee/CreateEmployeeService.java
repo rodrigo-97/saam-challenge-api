@@ -19,14 +19,12 @@ public class CreateEmployeeService {
     }
 
     @Transactional
-    public CreateEmployeeReturn handle(CreateEmployeeParams params) {
+    public void handle(CreateEmployeeParams params) {
         // valida o usuário autenticado
         User user = userComponent.findAuthenticated();
 
-        // cadastra novo empregado
+        // cadastra novo funcionário
         Employee createdEmployee = createEmployee(params, user);
-
-        return CreateEmployeeReturn.fromEntity(createdEmployee);
     }
 
     private Employee createEmployee(CreateEmployeeParams params, User user) {

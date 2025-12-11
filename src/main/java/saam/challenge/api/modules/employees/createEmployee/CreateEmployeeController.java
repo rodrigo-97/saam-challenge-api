@@ -25,8 +25,8 @@ public class CreateEmployeeController {
 
     @PostMapping
     @Operation(summary = "Cria um novo funcionário")
-    public ResponseEntity<CreateEmployeeReturn> handle(@RequestBody @Valid CreateEmployeeParams params) {
-        CreateEmployeeReturn returnData = service.handle(params);
-        return ResponseEntity.status(HttpStatus.CREATED).body(returnData);
+    public ResponseEntity<Void> handle(@RequestBody @Valid CreateEmployeeParams params) {
+        service.handle(params);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

@@ -17,6 +17,6 @@ public class SignInParams {
 
     @NotEmpty(message = "A senha é obrigatória.")
     @Size(min = 4, max = 32, message = "A senha deve ter entre {min} e {max} caracteres.")
-    @Schema(description = "Senha do usuário", example = "admin")
+    @Schema(description = "Senha do usuário", example = "adminadmin")
     private String password;
 }

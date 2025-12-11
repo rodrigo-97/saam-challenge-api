@@ -1,4 +1,4 @@
-package saam.challenge.api.modules.employees.createEmployee;
+package saam.challenge.api.modules.metrics.dashboard;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import java.time.OffsetDateTime;
 
 @Getter
 @Setter
-public class CreateEmployeeReturn {
+public class FindDashboardDataEmployeeReturn {
 
     private Long id;
     private String name;
@@ -17,8 +17,8 @@ public class CreateEmployeeReturn {
     private BigDecimal salary;
     private Boolean active;
 
-    public static CreateEmployeeReturn fromEntity(Employee employee) {
-        CreateEmployeeReturn data = new CreateEmployeeReturn();
+    public static FindDashboardDataEmployeeReturn fromEntity(Employee employee) {
+        FindDashboardDataEmployeeReturn data = new FindDashboardDataEmployeeReturn();
 
         data.setId(employee.getId());
         data.setName(employee.getName());

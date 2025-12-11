@@ -26,10 +26,10 @@ public class DeactivateEmployeeService {
         // valida usuário logado
         User user = userComponent.findAuthenticated();
 
-        // busca empregado que será desativado
+        // busca funcionário que será desativado
         Employee employeeToDeactivate = findEmployeeToDeactivate(employeeId, user);
 
-        // desativa o empregado
+        // desativa o funcionário
         deactivateEmployee(employeeToDeactivate);
     }
 

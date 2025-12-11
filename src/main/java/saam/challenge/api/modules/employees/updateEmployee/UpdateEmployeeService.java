@@ -26,7 +26,7 @@ public class UpdateEmployeeService {
         // valida usuário logado
         User user = userComponent.findAuthenticated();
 
-        // busca o empregado que terá os dados atualizado
+        // busca o funcionário que terá os dados atualizado
         Employee employee = findEmployeeToUpdate(employeeId, user);
 
         // atualiza os dados do usuário
@@ -43,7 +43,7 @@ public class UpdateEmployeeService {
     }
 
     private Employee findEmployeeToUpdate(Long employeeId, User user) {
-        Optional<Employee> employee = repository.findByIdAndUserAndActiveTrue(employeeId, user);
+        Optional<Employee> employee = repository.findByIdAndUser(employeeId, user);
 
         if (employee.isEmpty()) {
             throw new EmployeeNotFoundException();

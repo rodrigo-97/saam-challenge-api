@@ -45,9 +45,6 @@ public class SignUpService {
     private void validateUser(SignUpParams params) {
         Optional<User> isUserExists = repository.findByUsernameOrEmail(params.getUsername(), params.getEmail());
 
-
-        System.out.println(isUserExists.isPresent());
-
         if (isUserExists.isPresent()) {
             throw new UserAlreadyExistsException();
         }

@@ -26,7 +26,7 @@ public class DeleteEmployeeService {
         // valida usuário logado
         User user = userComponent.findAuthenticated();
 
-        // busca empregado que será deletado
+        // busca functionário que será deletado
         Employee employee = findEmployeeToDelete(employeedId, user);
 
         // executa a deleção
@@ -34,7 +34,7 @@ public class DeleteEmployeeService {
     }
 
     private Employee findEmployeeToDelete(Long employeeId, User user) {
-        Optional<Employee> employee = repository.findByIdAndUserAndActiveTrue(employeeId, user);
+        Optional<Employee> employee = repository.findByIdAndUser(employeeId, user);
 
         if (employee.isEmpty()) {
             throw new EmployeeNotFoundException();

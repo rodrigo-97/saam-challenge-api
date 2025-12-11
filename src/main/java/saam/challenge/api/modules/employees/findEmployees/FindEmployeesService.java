@@ -30,7 +30,7 @@ public class FindEmployeesService {
     public Paginated<FindEmployeesReturn> handle(FindEmployeesParams params) {
         User user = userComponent.findAuthenticated();
         Pageable pageable = PageRequest.of(params.getPage() - 1, params.getSize(), Sort.by("id").descending());
-        Page<Employee> page = repository.findByUserAndActiveTrue(user, pageable);
+        Page<Employee> page = repository.findByUser(user, pageable);
 
         List<FindEmployeesReturn> employees = page
                 .getContent()
